@@ -7,7 +7,7 @@
 % Copyright (C)
 %    2007-2011 Heiko Oberdiek
 %    2016-2019 Oberdiek Package Support Group
-%    https://github.com/ho-tex/oberdiek/issues
+%    https://github.com/ho-tex/hycolor/issues
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -23,7 +23,7 @@
 %
 % The Current Maintainers of this work are
 % Heiko Oberdiek and the Oberdiek Package Support Group
-% https://github.com/ho-tex/oberdiek/issues
+% https://github.com/ho-tex/hycolor/issues
 %
 % This work consists of the main source file hycolor.dtx
 % and the derived files
@@ -34,8 +34,8 @@
 %    hycolor-test-xcol4.tex.
 %
 % Distribution:
-%    CTAN:macros/latex/contrib/oberdiek/hycolor.dtx
-%    CTAN:macros/latex/contrib/oberdiek/hycolor.pdf
+%    CTAN:macros/latex/contrib/hycolor/hycolor.dtx
+%    CTAN:macros/latex/contrib/hycolor/hycolor.pdf
 %
 % Unpacking:
 %    (a) If hycolor.ins is present:
@@ -64,10 +64,10 @@
 %       pdflatex hycolor.dtx
 %
 % Installation:
-%    TDS:tex/latex/oberdiek/hycolor.sty
-%    TDS:tex/latex/oberdiek/xcolor-patch.sty
-%    TDS:doc/latex/oberdiek/hycolor.pdf
-%    TDS:source/latex/oberdiek/hycolor.dtx
+%    TDS:tex/latex/hycolor/hycolor.sty
+%    TDS:tex/latex/hycolor/xcolor-patch.sty
+%    TDS:doc/latex/hycolor/hycolor.pdf
+%    TDS:source/latex/hycolor/hycolor.dtx
 %
 %<*ignore>
 \begingroup
@@ -116,7 +116,7 @@ This work has the LPPL maintenance status "maintained".
 
 The Current Maintainers of this work are
 Heiko Oberdiek and the Oberdiek Package Support Group
-https://github.com/ho-tex/oberdiek/issues
+https://github.com/ho-tex/hycolor/issues
 
 
 This work consists of the main source file hycolor.dtx
@@ -133,17 +133,9 @@ and the derived files
 \generate{%
   \file{hycolor.ins}{\from{hycolor.dtx}{install}}%
   \file{hycolor.drv}{\from{hycolor.dtx}{driver}}%
-  \usedir{tex/latex/oberdiek}%
+  \usedir{tex/latex/hycolor}%
   \file{hycolor.sty}{\from{hycolor.dtx}{package}}%
   \file{xcolor-patch.sty}{\from{hycolor.dtx}{xcolor}}%
-%  \usedir{doc/latex/oberdiek/test}%
-%  \file{hycolor-test1.tex}{\from{hycolor.dtx}{test,test1}}%
-%  \file{hycolor-test2.tex}{\from{hycolor.dtx}{test,test2}}%
-%  \file{hycolor-test3.tex}{\from{hycolor.dtx}{test,test3}}%
-%  \file{hycolor-test-xcol1.tex}{\from{hycolor.dtx}{test-xcolor,xcol1}}%
-%  \file{hycolor-test-xcol2.tex}{\from{hycolor.dtx}{test-xcolor,xcol2}}%
-%  \file{hycolor-test-xcol3.tex}{\from{hycolor.dtx}{test-xcolor,xcol3}}%
-%  \file{hycolor-test-xcol4.tex}{\from{hycolor.dtx}{test-xcolor-fbox}}%
 }
 
 \catcode32=13\relax% active space
@@ -221,7 +213,7 @@ and the derived files
 % \title{The \xpackage{hycolor} package}
 % \date{2019/12/15 v1.9}
 % \author{Heiko Oberdiek\thanks
-% {Please report any issues at \url{https://github.com/ho-tex/oberdiek/issues}}}
+% {Please report any issues at \url{https://github.com/ho-tex/hycolor/issues}}}
 %
 % \maketitle
 %
@@ -1424,17 +1416,17 @@ and the derived files
 % \paragraph{Package.} This package is available on
 % CTAN\footnote{\CTANpkg{hycolor}}:
 % \begin{description}
-% \item[\CTAN{macros/latex/contrib/oberdiek/hycolor.dtx}] The source file.
-% \item[\CTAN{macros/latex/contrib/oberdiek/hycolor.pdf}] Documentation.
+% \item[\CTAN{macros/latex/contrib/hycolor/hycolor.dtx}] The source file.
+% \item[\CTAN{macros/latex/contrib/hycolor/hycolor.pdf}] Documentation.
 % \end{description}
 %
 %
-% \paragraph{Bundle.} All the packages of the bundle `oberdiek'
+% \paragraph{Bundle.} All the packages of the bundle `hycolor'
 % are also available in a TDS compliant ZIP archive. There
 % the packages are already unpacked and the documentation files
 % are generated. The files and directories obey the TDS standard.
 % \begin{description}
-% \item[\CTANinstall{install/macros/latex/contrib/oberdiek.tds.zip}]
+% \item[\CTANinstall{install/macros/latex/contrib/hycolor.tds.zip}]
 % \end{description}
 % \emph{TDS} refers to the standard ``A Directory Structure
 % for \TeX\ Files'' (\CTANpkg{tds}). Directories
@@ -1442,11 +1434,11 @@ and the derived files
 %
 % \subsection{Bundle installation}
 %
-% \paragraph{Unpacking.} Unpack the \xfile{oberdiek.tds.zip} in the
+% \paragraph{Unpacking.} Unpack the \xfile{hycolor.tds.zip} in the
 % TDS tree (also known as \xfile{texmf} tree) of your choice.
 % Example (linux):
 % \begin{quote}
-%   |unzip oberdiek.tds.zip -d ~/texmf|
+%   |unzip hycolor.tds.zip -d ~/texmf|
 % \end{quote}
 %
 % \subsection{Package installation}
@@ -1464,10 +1456,10 @@ and the derived files
 % \begin{quote}
 % \def\t{^^A
 % \begin{tabular}{@{}>{\ttfamily}l@{ $\rightarrow$ }>{\ttfamily}l@{}}
-%   hycolor.sty & tex/latex/oberdiek/hycolor.sty\\
-%   xcolor-patch.sty & tex/latex/oberdiek/xcolor-patch.sty\\
-%   hycolor.pdf & doc/latex/oberdiek/hycolor.pdf\\
-%   hycolor.dtx & source/latex/oberdiek/hycolor.dtx\\
+%   hycolor.sty & tex/latex/hycolor/hycolor.sty\\
+%   xcolor-patch.sty & tex/latex/hycolor/xcolor-patch.sty\\
+%   hycolor.pdf & doc/latex/hycolor/hycolor.pdf\\
+%   hycolor.dtx & source/latex/hycolor/hycolor.dtx\\
 % \end{tabular}^^A
 % }^^A
 % \sbox0{\t}^^A
