@@ -144,7 +144,7 @@
 \definecolor[named]{MyGreen}{rgb}{0,0.7,0}
 \definecolor{mygreen}{named}{MyGreen}
 \definecolor{graynine}{gray}{0.9}
-\definecolor{GraySix}{Gray}{9}
+%\definecolor{GraySix}{Gray}{9}
 \begin{qstest}{AttachfileColorX}{AttachfileColorX}
   \Test{}{}{}{}{}%
   \Test{0.1 0.2 0.3}{[rgb]{.1,.2,.3}}{.1 .2 .3 set-rgb}%
@@ -161,11 +161,11 @@
   \Test{cyan}{cyan}{1 0 0 0 set-cmyk}{/C[0 1 1]}{/C[1 0 0 0]}%
   \Test{[named]{black}}{[named]{black}}{0 0 0 set-rgb}%
        {/C[0 0 0]}{/C[0 0 0]}%
-  \Test{[Gray]{9}}{[Gray]{9}}{.6 set-gray}{/C[.6 .6 .6]}{/C[.6]}%
+%  \Test{[Gray]{9}}{[Gray]{9}}{.6 set-gray}{/C[.6 .6 .6]}{/C[.6]}%
   \Test{[HTML]{0080FF}}{[HTML]{0080FF}}{0 .50195 1 set-rgb}%
        {/C[0 .50195 1]}{/C[0 .50195 1]}%
   \Test{graynine}{graynine}{.9 set-gray}{/C[.9 .9 .9]}{/C[.9]}%
-  \Test{GraySix}{GraySix}{.6 set-gray}{/C[.6 .6 .6]}{/C[.6]}%
+%  \Test{GraySix}{GraySix}{.6 set-gray}{/C[.6 .6 .6]}{/C[.6]}%
   \Test{[wave]{500}}{[wave]{500}}{0 1 .49846 set-rgb}%
        {/C[0 1 .49846]}{/C[0 1 .49846]}%
   \TestError[6]{[empty]{}}{}{}{}\NoEmptyModel

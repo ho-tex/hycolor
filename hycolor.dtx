@@ -28,10 +28,7 @@
 % This work consists of the main source file hycolor.dtx
 % and the derived files
 %    hycolor.sty, hycolor.pdf, hycolor.ins, hycolor.drv,
-%    xcolor-patch.sty, hycolor-test1.tex, hycolor-test2.tex,
-%    hycolor-test3.tex, hycolor-test-xcol1.tex,
-%    hycolor-test-xcol2.tex, hycolor-test-xcol3.tex,
-%    hycolor-test-xcol4.tex.
+%    xcolor-patch.sty
 %
 % Distribution:
 %    CTAN:macros/latex/contrib/hycolor/hycolor.dtx
@@ -122,10 +119,7 @@ https://github.com/ho-tex/hycolor/issues
 This work consists of the main source file hycolor.dtx
 and the derived files
    hycolor.sty, hycolor.pdf, hycolor.ins, hycolor.drv,
-   xcolor-patch.sty, hycolor-test1.tex, hycolor-test2.tex,
-   hycolor-test3.tex, hycolor-test-xcol1.tex,
-   hycolor-test-xcol2.tex, hycolor-test-xcol3.tex,
-   hycolor-test-xcol4.tex.
+   xcolor-patch.sty
 
 \endpreamble
 \let\MetaPrefix\DoubleperCent
@@ -1227,7 +1221,7 @@ and the derived files
 \ProvidesPackage{xcolor-patch}[2019/12/15 xcolor patch]
 %    \end{macrocode}
 %    \begin{macrocode}
-\RequirePackage{hopatch}[2019/12/15]
+\RequirePackage{hopatch}
 \hopatch@AfterPackage{xcolor}{%
 %    \end{macrocode}
 %    \begin{macro}{\XC@ifxcase}
@@ -1611,6 +1605,8 @@ and the derived files
 %   \begin{Version}{2019/12/15 v1.9}
 %   \item
 %     Documentation updates.
+%   \item
+%     Do not load \xpackage{xcolor-patch} by default.
 %   \end{Version}
 % \end{History}
 %
