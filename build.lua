@@ -7,7 +7,7 @@ module = "hycolor"
 textfiles = {"README.md"}
 unpackfiles = {'hycolor.dtx'}
 
-packtdszip  = true
+-- packtdszip  = true
 
 maxprintline=10000
 checkruns = 2
