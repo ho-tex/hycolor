@@ -1,7 +1,7 @@
 % \iffalse meta-comment
 %
 % File: hycolor.dtx
-% Version: 2019/12/15 v1.9
+% Version: 2020-01-27 v1.10
 % Info: Color options for hyperref/bookmark
 %
 % Copyright (C)
@@ -81,7 +81,7 @@
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: hycolor 2019/12/15 v1.9 Color options for hyperref/bookmark (HO)}
+\Msg{* Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -93,7 +93,7 @@
 This is a generated file.
 
 Project: hycolor
-Version: 2019/12/15 v1.9
+Version: 2020-01-27 v1.10
 
 Copyright (C)
    2007-2011 Heiko Oberdiek
@@ -156,7 +156,7 @@ and the derived files
 %<*driver>
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesFile{hycolor.drv}%
-  [2019/12/15 v1.9 Color options for hyperref/bookmark (HO)]%
+  [2020-01-27 v1.10 Color options for hyperref/bookmark (HO)]%
 \documentclass{ltxdoc}
 \usepackage{holtxdoc}[2011/11/22]
 \usepackage[ruled]{algorithm2e}
@@ -205,7 +205,7 @@ and the derived files
 % \GetFileInfo{hycolor.drv}
 %
 % \title{The \xpackage{hycolor} package}
-% \date{2019/12/15 v1.9}
+% \date{2020-01-27 v1.10}
 % \author{Heiko Oberdiek\thanks
 % {Please report any issues at \url{https://github.com/ho-tex/hycolor/issues}}}
 %
@@ -308,7 +308,7 @@ and the derived files
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{hycolor}%
-  [2019/12/15 v1.9 Color options for hyperref/bookmark (HO)]%
+  [2020-01-27 v1.10 Color options for hyperref/bookmark (HO)]%
 %    \end{macrocode}
 %
 %    \begin{macrocode}
@@ -653,11 +653,11 @@ and the derived files
 %
 %    \begin{macrocode}
 \def\HyColor@UseColor#1{%
-  \ifx#1\relax
+  \ifx\relax#1\@empty
   \else
-    \ifx#1\@empty
+    \ifx\@empty#1\@empty
     \else
-      \expandafter\HyColor@@UseColor#1\@nil
+      \expandafter\expandafter\expandafter\HyColor@@UseColor#1\@nil
     \fi
   \fi
 }
@@ -1607,6 +1607,9 @@ and the derived files
 %     Documentation updates.
 %   \item
 %     Do not load \xpackage{xcolor-patch} by default.
+%   \end{Version}
+%   \begin{Version}{2020-01-27 v1.10}
+%   \item extra expansion step to avoid \verb|! LaTeX Error: Undefined color `[{rgb}]| errors in hyperref.
 %   \end{Version}
 % \end{History}
 %

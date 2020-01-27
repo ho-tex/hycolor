@@ -1,0 +1,22 @@
+% this should run without error (2020-01-27 release)
+\documentclass{article}
+\input{regression-test}
+
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+
+
+\hypersetup{
+linkcolor={[rgb]{0,0.2,0.6}},
+citecolor={[rgb]{0,0.6,0.2}},
+filecolor={[rgb]{0.8,0,0.8}},
+urlcolor={[rgb]{0.8,0,0.8}},
+}
+\begin{document}
+
+\START
+\href{file:abc}{abc}
+\href{run:abc}{abc}
+
+\END
+\end{document}
