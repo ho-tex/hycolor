@@ -1,0 +1,13 @@
+% this should run without error (2020-01-27 release removed xcolor-patch)
+\documentclass[a4paper, 12pt]{article}
+
+\input{regression-test}
+\usepackage{hycolor,xcolor}
+
+\begin{document}
+
+\START
+\textcolor[Gray]{10}{text}
+\END
+
+\end{document} 

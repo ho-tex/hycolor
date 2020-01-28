@@ -311,9 +311,95 @@ and the derived files
 %    \end{macrocode}
 %
 % Should not be needed after \textsf{xcolor} updates,
-% users can explicitly load \xpackage{xcolor-patch} to fix Gray color model until then.
+% Avoid loading \xpackage{xcolor-patch} but fix Gray color model.
 %    \begin{macrocode}
 % \RequirePackage{xcolor-patch}[2019/12/15]
+\AtBeginDocument{%
+\def\@tempa#1,{%
+    \XC@ifxcase\tm{%
+      \XC@mod@rgb{%
+        \XC@calcN{#1}\@@tmp
+        \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+      }%
+      \XC@mod@cmy{%
+        \XC@calcC{#1}\@@tmp
+        \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+      }%
+      \XC@mod@cmyk{%
+        \XC@calcC{#1}\@@tmp
+        \edef\@@tmp{0,0,0,\@@tmp}%
+      }%
+      \XC@mod@RGB{%
+        \edef\@@scl{\rangeRGB}%
+        \XC@calcM{#1}\@@tmp
+        \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+      }%
+      \XC@mod@HTML{%
+        \edef\@@scl{\@cclv}%
+        \XC@calcM{#1}\@@tmp
+        \XC@calcH\@@tmp\@@tmp
+        \edef\@@tmp{\@@tmp\@@tmp\@@tmp}%
+      }%
+      \XC@mod@HSB{%
+        \edef\@@scl{\rangeHSB}%
+        \XC@calcM{#1}\@@tmp
+        \edef\@@tmp{0,0,\@@tmp}%
+      }%
+      \XC@mod@Gray{%
+        \edef\@@scl{\rangeGray}%
+        \XC@calcM{#1}\@@tmp
+      }%
+    }%
+    {%
+      \XC@calcN{#1}\@@tmp
+      \edef\@@tmp{0,0,\@@tmp}%
+    }%
+  }%
+\ifx\XC@cnv@gray\@tempa
+    \def\XC@cnv@gray#1,{%
+      \XC@ifxcase\tm{%
+        \XC@mod@rgb{%
+          \XC@calcN{#1}\@@tmp
+          \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+        }%
+        \XC@mod@gray{}%
+        \XC@mod@cmy{%
+          \XC@calcC{#1}\@@tmp
+          \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+        }%
+        \XC@mod@cmyk{%
+          \XC@calcC{#1}\@@tmp
+          \edef\@@tmp{0,0,0,\@@tmp}%
+        }%
+        \XC@mod@RGB{%
+          \edef\@@scl{\rangeRGB}%
+          \XC@calcM{#1}\@@tmp
+          \edef\@@tmp{\@@tmp,\@@tmp,\@@tmp}%
+        }%
+        \XC@mod@HTML{%
+          \edef\@@scl{\@cclv}%
+          \XC@calcM{#1}\@@tmp
+          \XC@calcH\@@tmp\@@tmp
+          \edef\@@tmp{\@@tmp\@@tmp\@@tmp}%
+        }%
+        \XC@mod@HSB{%
+          \edef\@@scl{\rangeHSB}%
+          \XC@calcM{#1}\@@tmp
+          \edef\@@tmp{0,0,\@@tmp}%
+        }%
+        \XC@mod@Gray{%
+          \edef\@@scl{\rangeGray}%
+          \XC@calcM{#1}\@@tmp
+        }%
+      }%
+      {%
+        \XC@calcN{#1}\@@tmp
+        \edef\@@tmp{0,0,\@@tmp}%
+      }%
+    }%
+\fi
+\let\@tempa\relax
+}
 %    \end{macrocode}
 %
 % \subsection{Normalization}
@@ -1592,6 +1678,7 @@ and the derived files
 %   \end{Version}
 %   \begin{Version}{2020-01-27 v1.10}
 %   \item extra expansion step to avoid \verb|! LaTeX Error: Undefined color `[{rgb}]| errors in hyperref.
+%   \item add fix to Gray model from \xpackage{xcolor-patch}.
 %   \end{Version}
 % \end{History}
 %
